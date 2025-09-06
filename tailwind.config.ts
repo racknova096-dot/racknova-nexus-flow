@@ -19,8 +19,8 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'orbitron': ['Orbitron', 'monospace'],
-				'space': ['Space Grotesk', 'sans-serif'],
+				'sans': ['Inter', 'system-ui', 'sans-serif'],
+				'heading': ['Inter', 'system-ui', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
@@ -66,10 +66,13 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				neon: {
-					cyan: 'hsl(var(--neon-cyan))',
-					purple: 'hsl(var(--neon-purple))',
-					magenta: 'hsl(var(--neon-magenta))'
+				corporate: {
+					navy: 'hsl(var(--navy))',
+					blue: 'hsl(var(--royal-blue))',
+					charcoal: 'hsl(var(--charcoal))',
+					gray: 'hsl(var(--gray-500))',
+					light: 'hsl(var(--gray-100))',
+					emerald: 'hsl(var(--emerald))'
 				}
 			},
 			borderRadius: {

@@ -1,112 +1,61 @@
-import { GlassButton } from "@/components/ui/glass-button"
-import { ArrowUp, Home, Settings, Mail } from "lucide-react"
+import { Separator } from "@/components/ui/separator"
 
 export const Footer = () => {
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' })
-  }
-
-  const scrollToSection = (sectionId: string) => {
-    const element = document.getElementById(sectionId)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-  }
-
   return (
-    <footer className="py-16 bg-gradient-to-b from-background to-background/95 border-t border-white/10 relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+    <footer className="bg-background border-t border-border">
+      <div className="container mx-auto px-6 py-16">
+        <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
-          <div className="lg:col-span-2">
-            <div className="space-y-4">
-              <h3 className="text-2xl font-bold font-orbitron">
-                <span className="neon-text">RacknovaMx</span>
+          <div className="space-y-4">
+            <div className="space-y-2">
+              <h3 className="text-xl font-bold font-heading text-primary">
+                RacknovaMx
               </h3>
-              <p className="text-muted-foreground font-space max-w-md leading-relaxed">
-                Sistema de gestión de inventarios semiautomático del futuro. 
-                Transformamos almacenes con tecnología de vanguardia y control en tiempo real.
+              <p className="text-sm text-muted-foreground">
+                Inventario 4.0 - Sistema de gestión semiautomático para operaciones confiables
               </p>
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <div className="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
-                Proyecto Inventario 4.0 - 2025
-              </div>
             </div>
           </div>
           
           {/* Navigation */}
-          <div>
-            <h4 className="text-lg font-semibold font-orbitron text-foreground mb-6">
-              Navegación
-            </h4>
-            <nav className="space-y-4">
-              <button
-                onClick={() => scrollToTop()}
-                className="flex items-center gap-3 text-muted-foreground hover:text-primary transition-colors font-space group"
-              >
-                <Home className="w-4 h-4 group-hover:scale-110 transition-transform" />
+          <div className="space-y-4">
+            <h4 className="font-semibold text-foreground font-heading">Navegación</h4>
+            <nav className="space-y-2">
+              <a href="#inicio" className="block text-muted-foreground hover:text-primary transition-colors hover-underline">
                 Inicio
-              </button>
-              <button
-                onClick={() => scrollToSection('sistema')}
-                className="flex items-center gap-3 text-muted-foreground hover:text-secondary transition-colors font-space group"
-              >
-                <Settings className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#sistema" className="block text-muted-foreground hover:text-primary transition-colors hover-underline">
                 Sistema
-              </button>
-              <button
-                onClick={() => scrollToSection('contacto')}
-                className="flex items-center gap-3 text-muted-foreground hover:text-accent transition-colors font-space group"
-              >
-                <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
+              </a>
+              <a href="#contacto" className="block text-muted-foreground hover:text-primary transition-colors hover-underline">
                 Contacto
-              </button>
+              </a>
             </nav>
           </div>
           
           {/* Contact */}
-          <div>
-            <h4 className="text-lg font-semibold font-orbitron text-foreground mb-6">
-              Contacto rápido
-            </h4>
-            <div className="space-y-4">
-              <div className="text-sm text-muted-foreground font-space">
-                <div className="font-medium text-foreground mb-1">Email</div>
-                contacto@racknovamx.com
-              </div>
-              <div className="text-sm text-muted-foreground font-space">
-                <div className="font-medium text-foreground mb-1">Teléfono</div>
-                +52 (555) 123-4567
-              </div>
-              <GlassButton
-                variant="ghost"
-                size="sm"
-                onClick={() => scrollToSection('contacto')}
-                className="mt-4"
-              >
-                Solicitar información
-              </GlassButton>
+          <div className="space-y-4">
+            <h4 className="font-semibold text-foreground font-heading">Contacto</h4>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>contacto@racknovamx.com</p>
+              <p>+52 (55) 1234-5678</p>
+              <p>Ciudad de México, México</p>
             </div>
           </div>
         </div>
         
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
-          <div className="text-sm text-muted-foreground font-space text-center md:text-left">
-            © 2025 RacknovaMx - Proyecto Inventario 4.0. Todos los derechos reservados.
+        <Separator className="my-8" />
+        
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
+          <p>© 2025 RacknovaMx - Proyecto Inventario 4.0. Todos los derechos reservados.</p>
+          <div className="flex gap-6">
+            <button className="hover:text-primary transition-colors hover-underline">
+              Privacidad
+            </button>
+            <button className="hover:text-primary transition-colors hover-underline">
+              Términos
+            </button>
           </div>
-          
-          <GlassButton
-            variant="ghost"
-            size="icon"
-            onClick={scrollToTop}
-            className="group"
-            aria-label="Volver arriba"
-          >
-            <ArrowUp className="w-4 h-4 group-hover:-translate-y-1 transition-transform" />
-          </GlassButton>
         </div>
       </div>
     </footer>

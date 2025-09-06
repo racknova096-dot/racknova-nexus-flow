@@ -1,71 +1,68 @@
-import { GlassCard, GlassCardContent, GlassCardDescription, GlassCardHeader, GlassCardTitle } from "@/components/ui/glass-card"
-import { Clock, Eye, Shield, Settings } from "lucide-react"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Activity, Shield, BarChart3, Settings } from "lucide-react"
 
 const benefits = [
   {
-    icon: Clock,
-    title: "Ahorro de tiempo",
-    description: "Ya no necesitas ir hasta el almacén. Controla todo desde tu oficina en tiempo real.",
+    icon: Activity,
+    title: "Control en Tiempo Real",
+    description: "Estado del rack 3×6 al instante. Visualiza qué posiciones están ocupadas o libres en segundos.",
     color: "text-primary"
   },
   {
-    icon: Eye,
-    title: "Control en tiempo real",
-    description: "Visualiza el estado completo de tu rack 3x6 con información actualizada al instante.",
-    color: "text-secondary"
+    icon: Shield,
+    title: "Seguridad por Roles",
+    description: "Sistema de permisos admin/operador con auditoría completa de todas las operaciones.",
+    color: "text-primary"
   },
   {
-    icon: Shield,
-    title: "Seguridad avanzada",
-    description: "Acceso restringido por login y control de permisos para máxima protección de datos.",
+    icon: BarChart3,
+    title: "Reportes Ejecutivos",
+    description: "Métricas clave y reportes exportables para toma de decisiones informada.",
     color: "text-accent"
   },
   {
     icon: Settings,
-    title: "Adaptabilidad total",
-    description: "Sistema flexible que se ajusta a las necesidades específicas de cada cliente.",
-    color: "text-primary"
+    title: "Integración con Sensores/ERP",
+    description: "Compatible y escalable. Se integra con sistemas existentes sin complicaciones.",
+    color: "text-secondary"
   }
 ]
 
 export const BenefitsSection = () => {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-background/95 relative">
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5"></div>
-      
-      <div className="container mx-auto px-6 relative z-10">
+    <section className="py-24 bg-muted/30">
+      <div className="container mx-auto px-6">
         <div className="text-center mb-16 fade-in-up">
-          <h2 className="text-4xl lg:text-5xl font-bold font-orbitron mb-6">
-            <span className="neon-text">Beneficios</span> Inmediatos
+          <h2 className="text-3xl lg:text-4xl font-bold font-heading mb-6 text-foreground">
+            Beneficios Inmediatos para tu Operación
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto font-space">
-            Transforma tu gestión de inventarios con tecnología de vanguardia 
-            y obtén resultados desde el primer día.
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Optimiza tu gestión de inventarios con herramientas profesionales 
+            diseñadas para empresas que buscan eficiencia y control.
           </p>
         </div>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {benefits.map((benefit, index) => (
-            <GlassCard 
+            <Card 
               key={index} 
-              variant="benefit" 
-              className="text-center group fade-in-up"
+              className="corporate-card text-center group fade-in-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
-              <GlassCardHeader>
-                <div className={`mx-auto w-16 h-16 rounded-2xl bg-gradient-to-br from-${benefit.color.split('-')[1]}/20 to-${benefit.color.split('-')[1]}/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}>
+              <CardHeader>
+                <div className={`mx-auto w-16 h-16 rounded-lg bg-${benefit.color.split('-')[1]}/10 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform duration-200`}>
                   <benefit.icon className={`w-8 h-8 ${benefit.color}`} />
                 </div>
-                <GlassCardTitle className="text-lg">
+                <CardTitle className="text-lg font-heading">
                   {benefit.title}
-                </GlassCardTitle>
-              </GlassCardHeader>
-              <GlassCardContent>
-                <GlassCardDescription className="text-center">
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <CardDescription className="text-center">
                   {benefit.description}
-                </GlassCardDescription>
-              </GlassCardContent>
-            </GlassCard>
+                </CardDescription>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>
