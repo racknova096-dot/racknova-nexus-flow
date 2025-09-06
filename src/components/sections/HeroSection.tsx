@@ -1,10 +1,16 @@
 import { Button } from "@/components/ui/button"
 import { ArrowRight, Play } from "lucide-react"
+import { ThemeToggle } from "@/components/ui/theme-toggle"
 import dashboardImage from "@/assets/dashboard-hero.jpg"
 
 export const HeroSection = () => {
   return (
-    <section className="split-hero bg-background">
+    <section className="split-hero bg-background relative">
+      {/* Theme Toggle - Floating */}
+      <div className="absolute top-6 right-6 z-20">
+        <ThemeToggle />
+      </div>
+
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-12 items-center min-h-screen py-16">
           {/* Left Content */}
