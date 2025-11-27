@@ -36,7 +36,7 @@ export const HeroSection = () => {
 
               <p className="text-xl text-muted-foreground max-w-lg leading-relaxed">
                 Revoluciona tu almacén con tecnología de vanguardia. Control en
-                tiempo real, IA predictiva y automatización total.
+                tiempo real.
               </p>
             </div>
 
@@ -63,9 +63,7 @@ export const HeroSection = () => {
                 <div className="text-3xl font-bold text-primary font-heading">
                   99.9%
                 </div>
-                <div className="text-sm text-muted-foreground">
-                  Precisión 
-                </div>
+                <div className="text-sm text-muted-foreground">Precisión</div>
               </div>
               <div className="w-px h-12 bg-border"></div>
               <div className="text-center">
