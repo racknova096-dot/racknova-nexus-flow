@@ -75,7 +75,8 @@ export const Header = () => {
               size="sm"
               className="corporate-button-primary"
               onClick={() =>
-                (window.location.href = "http://localhost:8080/login")
+                (window.location.href =
+                  "https://racknova-dashboard.vercel.app/login")
               }
             >
               <LogIn className="w-4 h-4 mr-2" />
