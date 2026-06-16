@@ -76,7 +76,7 @@ export const Header = () => {
               className="corporate-button-primary"
               onClick={() =>
                 (window.location.href =
-                  "https://racknova-dashboard.vercel.app/login")
+                  `${import.meta.env.VITE_DASHBOARD_URL || "https://racknova-dashboard.vercel.app"}/login`;
               }
             >
               <LogIn className="w-4 h-4 mr-2" />
